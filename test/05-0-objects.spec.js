@@ -91,13 +91,16 @@ describe("BabyClass", function () {
 });
 
 describe("makeBabyClassAndSpeak", function () {
-  beforeEach(function () {
-    spyOn(console, "log");
-  });
-
   it("should create Warfa using BabyClass and call speak method", function () {
     const response = makeBabyClassAndSpeak();
     expect(response).toEqual("goo goo ga ga");
+  });
+});
+
+describe("makeBabyClassAndSayName", function () {
+  it("should create Warfa using BabyClass and call sayName method", function () {
+    const response = makeBabyClassAndSayName();
+    expect(response).toEqual("My name is Warfa");
   });
 });
 

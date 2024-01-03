@@ -28,7 +28,6 @@ function makeBabyAndSpeakOne() {
 // The baby is learning fast!
 // define a method on the babyPrototype named sayName that returns "My name is " + the name of the baby
 // Your Code Here
-babyPrototype.sayName = function () {};
 
 // define a function named makeBabyAndSayName that creates a baby named Warfa with age 1
 // the function should return the value of calling the sayName method on Warfa
@@ -63,7 +62,6 @@ function makeBabyAndSpeakTwo() {
 
 // define a method on the Baby prototype named sayName that returns "My name is " + the name of the baby
 // Your Code Here
-Baby.prototype.sayName = function () {};
 
 // define a function named makeBabyAndSayName that creates a baby named Warfa with age 1
 // the function should return the value of calling the sayName method on Warfa
@@ -127,10 +125,6 @@ class ToddlerClass extends BabyClass {
 // makeToddlerClassAndSpeak should create a toddler named Tina with age 2
 // the function should return the value of calling the speak method on Tina
 function makeToddlerClassAndSpeak() {}
-
-// makeToddlerClassAndWalk should create a toddler named Tina with age 2
-// the function should return the value of calling the walk method on Tina
-function makeToddlerClassAndWalk() {}
 
 // makeToddlerClassAndGrowUp should create a toddler named Tina with age 2
 // the function should call the growUp method on Tina
