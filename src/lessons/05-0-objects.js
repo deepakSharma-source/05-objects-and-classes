@@ -134,3 +134,51 @@ function makeBabyClassAndSayName() {
   let warfa = new BabyClass("Warfa", 1);
   return warfa.sayName();
 }
+
+/**
+ *
+ * Inheritance
+ *
+ */
+
+// define a class named Todler that extends the Baby class
+
+// Define a ToddlerClass that extends BabyClass
+class ToddlerClass extends BabyClass {
+  constructor(name, age) {
+    super(name, age); // Call the parent class constructor
+  }
+
+  // Override the speak method
+  speak() {
+    return "I can talk now!";
+  }
+
+  // New method specific to ToddlerClass
+  growUp() {
+    this.age += 1;
+  }
+}
+
+// makeToddlerClassAndSpeak should create a toddler named Tina with age 2
+// the function should return the value of calling the speak method on Tina
+function makeToddlerClassAndSpeak() {
+  let tina = new ToddlerClass("Tina", 2);
+  return tina.speak();
+}
+
+// makeToddlerClassAndWalk should create a toddler named Tina with age 2
+// the function should return the value of calling the walk method on Tina
+function makeToddlerClassAndWalk() {
+  let tina = new ToddlerClass("Tina", 2);
+  return tina.walk();
+}
+
+// makeToddlerClassAndGrowUp should create a toddler named Tina with age 2
+// the function should call the growUp method on Tina
+// the function should return the age of Tina
+function makeToddlerClassAndGrowUp() {
+  let tina = new ToddlerClass("Tina", 2);
+  tina.growUp();
+  return tina.age;
+}

@@ -1,4 +1,4 @@
-describe("(I) babyPrototype and createBaby Function", function () {
+describe("babyPrototype and createBaby Function", function () {
   it("should define an object named babyPrototype", function () {
     expect(babyPrototype).toBeDefined();
   });
@@ -8,7 +8,7 @@ describe("(I) babyPrototype and createBaby Function", function () {
   });
 });
 
-describe("(I) createBaby Function", function () {
+describe("createBaby", function () {
   it("should create a baby with given name and age", function () {
     let babyWarfa = createBaby("Warfa", 1);
     expect(babyWarfa.name).toEqual("Warfa");
@@ -16,14 +16,14 @@ describe("(I) createBaby Function", function () {
   });
 });
 
-describe("(I) makeBabyAndSpeakOne Function", function () {
+describe("makeBabyAndSpeakOne", function () {
   it("should create Warfa and call speak method", function () {
     const phrase = makeBabyAndSpeakOne();
     expect(phrase).toEqual("goo goo ga ga");
   });
 });
 
-describe("(I) sayName Method on babyPrototype", function () {
+describe("sayName Method on babyPrototype", function () {
   it("should have a sayName method on babyPrototype", function () {
     expect(babyPrototype.sayName).toBeDefined();
   });
@@ -33,14 +33,14 @@ describe("(I) sayName Method on babyPrototype", function () {
   });
 });
 
-describe("(I) makeBabyAndSayNameOne", function () {
+describe("makeBabyAndSayNameOne", function () {
   it("should create baby Warfa with age 1 and return 'My name is Warfa'", function () {
     let resonse = makeBabyAndSayNameOne();
     expect(resonse).toEqual("My name is Warfa");
   });
 });
 
-describe("(II) Baby Constructor Function", function () {
+describe("Baby Constructor", function () {
   it("should create a baby with given name and age", function () {
     let babyWarfa = new Baby("Warfa", 1);
     expect(babyWarfa.name).toEqual("Warfa");
@@ -48,14 +48,14 @@ describe("(II) Baby Constructor Function", function () {
   });
 });
 
-describe("(II) makeBabyAndSpeakTwo Function", function () {
+describe("makeBabyAndSpeakTwo", function () {
   it("should create Warfa using Baby constructor and call speak method", function () {
     let phrase = makeBabyAndSpeakTwo();
     expect(phrase).toEqual("goo goo ga ga");
   });
 });
 
-describe("(II) sayName Method on babyPrototype", function () {
+describe("sayName Method on babyPrototype", function () {
   it("should have a sayName method on babyPrototype", function () {
     expect(Baby.prototype.sayName).toBeDefined();
   });
@@ -65,7 +65,7 @@ describe("(II) sayName Method on babyPrototype", function () {
   });
 });
 
-describe("(II) makeBabyAndSayNameTwo Function", function () {
+describe("makeBabyAndSayNameTwo", function () {
   it("should create Warfa using Baby constructor and call sayName method", function () {
     let resonse = makeBabyAndSayNameTwo();
     expect(resonse).toEqual("My name is Warfa");
@@ -90,7 +90,7 @@ describe("BabyClass", function () {
   });
 });
 
-describe("makeBabyClassAndSpeak Function", function () {
+describe("makeBabyClassAndSpeak", function () {
   beforeEach(function () {
     spyOn(console, "log");
   });
@@ -98,5 +98,42 @@ describe("makeBabyClassAndSpeak Function", function () {
   it("should create Warfa using BabyClass and call speak method", function () {
     const response = makeBabyClassAndSpeak();
     expect(response).toEqual("goo goo ga ga");
+  });
+});
+
+describe("ToddlerClass", function () {
+  it("should create a toddler with given name and age", function () {
+    let toddlerTina = new ToddlerClass("Tina", 2);
+    expect(toddlerTina.name).toEqual("Tina");
+    expect(toddlerTina.age).toEqual(2);
+  });
+
+  it("should correctly speak with overridden speak method", function () {
+    let toddlerTina = new ToddlerClass("Tina", 2);
+    expect(toddlerTina.name).toEqual("Tina");
+    expect(toddlerTina.age).toEqual(2);
+    expect(toddlerTina.speak()).toEqual("I can talk now!");
+  });
+
+  it("should have a growUp method that increments age", function () {
+    let toddlerTina = new ToddlerClass("Tina", 2);
+    expect(toddlerTina.name).toEqual("Tina");
+    expect(toddlerTina.age).toEqual(2);
+    toddlerTina.growUp();
+    expect(toddlerTina.age).toEqual(3);
+  });
+});
+
+describe("makeToddlerClassAndSpeak", function () {
+  it("should create Tina using ToddlerClass and call overridden speak method", function () {
+    const response = makeToddlerClassAndSpeak();
+    expect(response).toEqual("I can talk now!");
+  });
+});
+
+describe("makeToddlerClassAndGrowUp", function () {
+  it("should create Tina, call growUp method, and return updated age", function () {
+    const ageAfterGrowUp = makeToddlerClassAndGrowUp();
+    expect(ageAfterGrowUp).toEqual(3);
   });
 });
